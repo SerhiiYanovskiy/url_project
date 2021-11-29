@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title>URL shortener</title>
+    <div>
+        <h1>{{ request.user.username }}
+            <a href="./logout">Log out</a></h1>
+    </div>
+    {% if url_short %}
+    <h1>
+        <a href="/{{ url_short }}"> {{ url_short }} </a>
+    </h1>
+    {% endif %}
+</head>
+<body>
+<div>
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>
